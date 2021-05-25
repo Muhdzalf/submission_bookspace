@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:submission_bookspace/registerscreen.dart';
 import 'package:submission_bookspace/theme.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -13,12 +14,13 @@ class WelcomeScreen extends StatelessWidget {
           ),
           Container(
             height: 350,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage(
-                'assets/images/book.png',
-              ),
-            )),
+            color: Colors.black45,
+            // decoration: BoxDecoration(
+            //     image: DecorationImage(
+            //   image: AssetImage(
+            //     'lib/images/buku.png',
+            //   ),
+            // )),
           ),
           SizedBox(
             height: 50,
@@ -44,7 +46,12 @@ class WelcomeScreen extends StatelessWidget {
                   height: 50,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RegisterScreen()));
+                  },
                   child: Text(
                     'MULAI',
                     style: subtitle.copyWith(fontSize: 18, color: Colors.white),
