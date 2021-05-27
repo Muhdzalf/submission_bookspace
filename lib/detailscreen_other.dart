@@ -67,12 +67,15 @@ class OtherBookDetailScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Container(
-                      width: 215,
-                      height: 323,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: NetworkImage(otherBook.image))),
+                    Hero(
+                      tag: otherBook.judul,
+                      child: Container(
+                        width: 215,
+                        height: 323,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: NetworkImage(otherBook.image))),
+                      ),
                     )
                   ],
                 ),
