@@ -1,6 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:submission_bookspace/models/buku_lainnya.dart';
+import 'package:submission_bookspace/models/buku_rekomendasi.dart';
 import 'package:submission_bookspace/theme.dart';
+
+import 'detailscreen.dart';
+import 'detailscreen_other.dart';
 
 class Home extends StatelessWidget {
   final String username;
@@ -61,16 +66,30 @@ class Home extends StatelessWidget {
             ),
             SizedBox(
               height: 255,
-              child: ListView(
+              child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  BookCard(),
-                  BookCard(),
-                  BookCard(),
-                  BookCard(),
-                ],
+                itemBuilder: (build, index) {
+                  final RecomendBook recomend = recomendBook[index];
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return DetailScreen(
+                          recomendBook: recomend,
+                        );
+                      }));
+                    },
+                    child: BookCard(
+                      judul: recomend.judul,
+                      penulis: recomend.penulis,
+                      imageUrl: recomend.image,
+                    ),
+                  );
+                },
+                itemCount: recomendBook.length,
               ),
             ),
+            SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Text(
@@ -80,14 +99,27 @@ class Home extends StatelessWidget {
             ),
             SizedBox(
               height: 255,
-              child: ListView(
+              child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  BookCard(),
-                  BookCard(),
-                  BookCard(),
-                  BookCard(),
-                ],
+                itemBuilder: (builder, index) {
+                  final OtherBook book = otherbook[index];
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return OtherBookDetailScreen(
+                          otherBook: book,
+                        );
+                      }));
+                    },
+                    child: BookCard(
+                      judul: book.judul,
+                      imageUrl: book.image,
+                      penulis: book.penulis,
+                    ),
+                  );
+                },
+                itemCount: otherbook.length,
               ),
             ),
           ],
@@ -98,8 +130,14 @@ class Home extends StatelessWidget {
 }
 
 class BookCard extends StatelessWidget {
+  final String judul;
+  final String penulis;
+  final String imageUrl;
   const BookCard({
     Key key,
+    this.judul,
+    this.penulis,
+    this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -117,18 +155,21 @@ class BookCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                color: Colors.white,
                 height: 175,
+                decoration: BoxDecoration(
+                    image: DecorationImage(image: NetworkImage(imageUrl))),
               ),
               SizedBox(
                 height: 5,
               ),
               Text(
-                'Judul ini belum ada',
+                judul,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 style: title.copyWith(fontSize: 14),
               ),
               Text(
-                'Penulis',
+                penulis,
                 style: subtitle.copyWith(fontSize: 12, color: Colors.white),
               ),
             ],
