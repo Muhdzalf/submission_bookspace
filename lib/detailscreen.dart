@@ -20,7 +20,7 @@ class DetailScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
               child: SizedBox(
                 height: 325,
                 child: Row(
