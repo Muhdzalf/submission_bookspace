@@ -14,13 +14,12 @@ class WelcomeScreen extends StatelessWidget {
           ),
           Container(
             height: 350,
-            color: Colors.black45,
-            // decoration: BoxDecoration(
-            //     image: DecorationImage(
-            //   image: AssetImage(
-            //     'lib/images/buku.png',
-            //   ),
-            // )),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage(
+                'lib/images/book.png',
+              ),
+            )),
           ),
           SizedBox(
             height: 50,
