@@ -38,12 +38,10 @@ class WelcomeScreen extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  'Tempat bagi para pecinta buku untuk berkumpul dan saling terhubung satu sama lain!',
+                  'Tempat Berkumpulnya buku-buku pilihan dan Berkualitas',
                   style: subtitle.copyWith(fontSize: 18),
                 ),
-                SizedBox(
-                  height: 50,
-                ),
+                Spacer(),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushReplacement(
