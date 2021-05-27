@@ -69,12 +69,15 @@ class DetailScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Container(
-                      width: 215,
-                      height: 323,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: NetworkImage(recomendBook.image))),
+                    Hero(
+                      tag: recomendBook.judul,
+                      child: Container(
+                        width: 215,
+                        height: 323,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: NetworkImage(recomendBook.image))),
+                      ),
                     )
                   ],
                 ),

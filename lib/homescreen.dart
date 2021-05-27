@@ -154,10 +154,13 @@ class BookCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 175,
-                decoration: BoxDecoration(
-                    image: DecorationImage(image: NetworkImage(imageUrl))),
+              Hero(
+                tag: judul,
+                child: Container(
+                  height: 175,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(image: NetworkImage(imageUrl))),
+                ),
               ),
               SizedBox(
                 height: 5,
