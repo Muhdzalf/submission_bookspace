@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:submission_bookspace/registerscreen.dart';
+import 'package:submission_bookspace/screens/register/registerscreen.dart';
 import 'package:submission_bookspace/theme.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -17,7 +17,7 @@ class WelcomeScreen extends StatelessWidget {
             decoration: BoxDecoration(
                 image: DecorationImage(
               image: AssetImage(
-                'lib/images/book.png',
+                'lib/images/book_lover.png',
               ),
             )),
           ),
@@ -38,7 +38,7 @@ class WelcomeScreen extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  'Tempat Berkumpulnya buku-buku pilihan dan Berkualitas',
+                  'Tempat Berkumpulnya buku-buku pilihan dan Berkualitas.',
                   style: subtitle.copyWith(fontSize: 18),
                 ),
                 Spacer(),

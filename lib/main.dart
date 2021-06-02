@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:submission_bookspace/welcomescreen.dart';
+import 'package:submission_bookspace/screens/welcome/welcome_screen.dart';
 
 void main() {
   runApp(MyApp());

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:submission_bookspace/homescreen.dart';
+import 'package:submission_bookspace/screens/home/homescreen.dart';
 import 'package:submission_bookspace/theme.dart';
 
 class RegisterScreen extends StatelessWidget {

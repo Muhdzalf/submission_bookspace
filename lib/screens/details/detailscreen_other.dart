@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:submission_bookspace/models/buku_rekomendasi.dart';
+import 'package:submission_bookspace/models/buku_lainnya.dart';
+import 'package:submission_bookspace/screens/details/components/navigation_button.dart';
 import 'package:submission_bookspace/theme.dart';
 
-import 'navigation_button.dart';
+class OtherBookDetailScreen extends StatelessWidget {
+  final OtherBook otherBook;
 
-class DetailScreen extends StatelessWidget {
-  final RecomendBook recomendBook;
-
-  const DetailScreen({Key key, this.recomendBook}) : super(key: key);
+  const OtherBookDetailScreen({Key key, this.otherBook}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +31,7 @@ class DetailScreen extends StatelessWidget {
                         SizedBox(
                           width: 120,
                           child: Text(
-                            recomendBook.judul,
+                            otherBook.judul,
                             style: title,
                           ),
                         ),
@@ -42,7 +41,7 @@ class DetailScreen extends StatelessWidget {
                         SizedBox(
                           width: 120,
                           child: Text(
-                            recomendBook.penulis,
+                            otherBook.penulis,
                             style: subtitle.copyWith(color: grey, fontSize: 16),
                           ),
                         ),
@@ -59,7 +58,7 @@ class DetailScreen extends StatelessWidget {
                                   style: title.copyWith(fontSize: 20),
                                 ),
                                 Text(
-                                  recomendBook.ranting,
+                                  otherBook.ranting,
                                   style: title.copyWith(fontSize: 36),
                                 )
                               ],
@@ -69,13 +68,13 @@ class DetailScreen extends StatelessWidget {
                       ],
                     ),
                     Hero(
-                      tag: recomendBook.judul,
+                      tag: otherBook.judul,
                       child: Container(
                         width: 215,
                         height: 323,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: NetworkImage(recomendBook.image))),
+                                image: NetworkImage(otherBook.image))),
                       ),
                     )
                   ],
@@ -96,7 +95,7 @@ class DetailScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               child: Text(
-                recomendBook.sinopsis,
+                otherBook.sinopsis,
                 textAlign: TextAlign.justify,
               ),
             )
